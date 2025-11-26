@@ -143,7 +143,36 @@ class Visualizer:
                     transition: background-color 0.2s;
                 }}
                 .link-btn:hover {{ background-color: #2980b9; }}
+                
+                .action-btn {{
+                    background-color: #e67e22;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 1em;
+                    margin-bottom: 15px;
+                    text-decoration: none;
+                    display: inline-block;
+                }}
+                .action-btn:hover {{ background-color: #d35400; }}
             </style>
+            <script>
+                function openAllLinks() {{
+                    const links = document.querySelectorAll('.minkabu-link');
+                    if (links.length === 0) {{
+                        alert('リンクが見つかりません。');
+                        return;
+                    }}
+                    if (!confirm(links.length + '個のタブを一気に開きます。よろしいですか？\\n(ポップアップブロックが有効な場合は許可してください)')) {{
+                        return;
+                    }}
+                    links.forEach(link => {{
+                        window.open(link.href, '_blank');
+                    }});
+                }}
+            </script>
         </head>
         <body>
             <div class="container">
@@ -152,6 +181,10 @@ class Visualizer:
                 
                 <div class="chart-container">
                     <img src="top_scores.png" alt="Score Chart" style="max-width: 100%; height: auto; border: 1px solid #eee;">
+                </div>
+                
+                <div style="text-align: right; margin-bottom: 10px;">
+                    <button onclick="openAllLinks()" class="action-btn">みんかぶを一括で開く ({top_n}銘柄)</button>
                 </div>
                 
                 <h2>総合スコア上位 {top_n} 銘柄</h2>
@@ -215,7 +248,7 @@ class Visualizer:
                                 <td class="{pred_1m_cls}">{pred_1m_str}</td>
                                 <td class="{pred_3m_cls}">{pred_3m_str}</td>
                                 <td class="{pred_6m_cls}">{pred_6m_str}</td>
-                                <td><a href="{minkabu_url}" target="_blank" class="link-btn">みんかぶ</a></td>
+                                <td><a href="{minkabu_url}" target="_blank" class="link-btn minkabu-link">みんかぶ</a></td>
                             </tr>
             """
             
