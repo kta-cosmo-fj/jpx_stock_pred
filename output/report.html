@@ -1,0 +1,434 @@
+
+        <!DOCTYPE html>
+        <html lang="ja">
+        <head>
+            <meta charset="UTF-8">
+            <title>TOPIX 100 分析レポート</title>
+            <style>
+                body { 
+                    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; 
+                    margin: 0;
+                    padding: 20px;
+                    background-color: #f4f7f6;
+                    color: #333;
+                }
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    padding: 30px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                }
+                h1 { 
+                    color: #2c3e50; 
+                    border-bottom: 2px solid #eee; 
+                    padding-bottom: 10px;
+                    margin-bottom: 20px;
+                }
+                p.meta { color: #7f8c8d; font-size: 0.9em; margin-bottom: 30px; }
+                
+                .chart-container {
+                    text-align: center;
+                    margin-bottom: 40px;
+                    padding: 20px;
+                    background: #fafafa;
+                    border-radius: 8px;
+                }
+                
+                table { 
+                    border-collapse: collapse; 
+                    width: 100%; 
+                    margin-top: 20px;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                }
+                th, td { 
+                    padding: 12px 15px; 
+                    text-align: left; 
+                    border-bottom: 1px solid #e0e0e0;
+                }
+                th { 
+                    background-color: #34495e; 
+                    color: #fff; 
+                    font-weight: 600;
+                    white-space: nowrap;
+                }
+                tr:hover { background-color: #f5f5f5; }
+                
+                .positive { color: #27ae60; font-weight: bold; }
+                .negative { color: #c0392b; font-weight: bold; }
+                .neutral { color: #7f8c8d; }
+                
+                .score-cell { font-weight: bold; color: #2980b9; }
+                
+                .link-btn { 
+                    display: inline-block;
+                    background-color: #3498db; 
+                    color: white; 
+                    padding: 6px 12px; 
+                    text-decoration: none; 
+                    border-radius: 4px; 
+                    font-size: 0.85em;
+                    transition: background-color 0.2s;
+                }
+                .link-btn:hover { background-color: #2980b9; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>TOPIX 100 分析レポート</h1>
+                <p class="meta">作成日時: 2025-11-26 22:25:36</p>
+                
+                <div class="chart-container">
+                    <img src="top_scores.png" alt="Score Chart" style="max-width: 100%; height: auto; border: 1px solid #eee;">
+                </div>
+                
+                <h2>総合スコア上位 20 銘柄</h2>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>順位</th>
+                                <th>コード</th>
+                                <th>総合スコア</th>
+                                <th>EPS成長率</th>
+                                <th>売上高成長率</th>
+                                <th>PER</th>
+                                <th>PBR</th>
+                                <th>ROE</th>
+                                <th>1日後<br>予測</th>
+                                <th>1ヶ月後<br>予測</th>
+                                <th>3ヶ月後<br>予測</th>
+                                <th>6ヶ月後<br>予測</th>
+                                <th>リンク</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        
+                            <tr>
+                                <td>1</td>
+                                <td>9022.T</td>
+                                <td class="score-cell">0.90</td>
+                                <td>982.78%</td>
+                                <td>95.89%</td>
+                                <td>8.02</td>
+                                <td>0.85</td>
+                                <td>0.11</td>
+                                <td class="positive">2.62%</td>
+                                <td class="negative">-0.90%</td>
+                                <td class="positive">7.58%</td>
+                                <td class="positive">38.65%</td>
+                                <td><a href="https://minkabu.jp/stock/9022" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>2</td>
+                                <td>7270.T</td>
+                                <td class="score-cell">0.85</td>
+                                <td>401.75%</td>
+                                <td>70.73%</td>
+                                <td>9.63</td>
+                                <td>0.92</td>
+                                <td>0.10</td>
+                                <td class="positive">0.70%</td>
+                                <td class="positive">5.20%</td>
+                                <td class="positive">21.18%</td>
+                                <td class="positive">36.53%</td>
+                                <td><a href="https://minkabu.jp/stock/7270" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>3</td>
+                                <td>9202.T</td>
+                                <td class="score-cell">0.84</td>
+                                <td>195.20%</td>
+                                <td>121.68%</td>
+                                <td>10.42</td>
+                                <td>1.18</td>
+                                <td>0.13</td>
+                                <td class="negative">-0.56%</td>
+                                <td class="positive">3.10%</td>
+                                <td class="negative">-2.40%</td>
+                                <td class="positive">3.83%</td>
+                                <td><a href="https://minkabu.jp/stock/9202" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>4</td>
+                                <td>7203.T</td>
+                                <td class="score-cell">0.81</td>
+                                <td>75.20%</td>
+                                <td>53.08%</td>
+                                <td>8.88</td>
+                                <td>1.09</td>
+                                <td>0.13</td>
+                                <td class="negative">-0.65%</td>
+                                <td class="negative">-0.45%</td>
+                                <td class="positive">9.16%</td>
+                                <td class="positive">20.99%</td>
+                                <td><a href="https://minkabu.jp/stock/7203" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>5</td>
+                                <td>8725.T</td>
+                                <td class="score-cell">0.79</td>
+                                <td>181.74%</td>
+                                <td>26.80%</td>
+                                <td>7.08</td>
+                                <td>1.17</td>
+                                <td>0.17</td>
+                                <td class="negative">-2.18%</td>
+                                <td class="positive">2.44%</td>
+                                <td class="negative">-1.31%</td>
+                                <td class="positive">9.27%</td>
+                                <td><a href="https://minkabu.jp/stock/8725" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>6</td>
+                                <td>8604.T</td>
+                                <td class="score-cell">0.78</td>
+                                <td>145.48%</td>
+                                <td>45.35%</td>
+                                <td>9.70</td>
+                                <td>0.99</td>
+                                <td>0.11</td>
+                                <td class="positive">0.04%</td>
+                                <td class="positive">6.21%</td>
+                                <td class="positive">11.25%</td>
+                                <td class="positive">36.08%</td>
+                                <td><a href="https://minkabu.jp/stock/8604" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>7</td>
+                                <td>4578.T</td>
+                                <td class="score-cell">0.78</td>
+                                <td>174.18%</td>
+                                <td>55.50%</td>
+                                <td>11.86</td>
+                                <td>1.67</td>
+                                <td>0.17</td>
+                                <td class="positive">1.09%</td>
+                                <td class="positive">4.14%</td>
+                                <td class="positive">8.20%</td>
+                                <td class="positive">32.91%</td>
+                                <td><a href="https://minkabu.jp/stock/4578" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>8</td>
+                                <td>9021.T</td>
+                                <td class="score-cell">0.77</td>
+                                <td>193.04%</td>
+                                <td>65.64%</td>
+                                <td>11.26</td>
+                                <td>1.23</td>
+                                <td>0.11</td>
+                                <td class="positive">0.99%</td>
+                                <td class="negative">-2.92%</td>
+                                <td class="negative">-5.70%</td>
+                                <td class="positive">5.54%</td>
+                                <td><a href="https://minkabu.jp/stock/9021" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>9</td>
+                                <td>7269.T</td>
+                                <td class="score-cell">0.77</td>
+                                <td>161.25%</td>
+                                <td>63.24%</td>
+                                <td>12.09</td>
+                                <td>1.52</td>
+                                <td>0.14</td>
+                                <td class="positive">2.48%</td>
+                                <td class="positive">6.22%</td>
+                                <td class="positive">25.02%</td>
+                                <td class="positive">37.94%</td>
+                                <td><a href="https://minkabu.jp/stock/7269" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>10</td>
+                                <td>8766.T</td>
+                                <td class="score-cell">0.72</td>
+                                <td>165.22%</td>
+                                <td>31.86%</td>
+                                <td>10.10</td>
+                                <td>2.11</td>
+                                <td>0.20</td>
+                                <td class="negative">-1.53%</td>
+                                <td class="negative">-8.95%</td>
+                                <td class="negative">-11.96%</td>
+                                <td class="positive">0.17%</td>
+                                <td><a href="https://minkabu.jp/stock/8766" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>11</td>
+                                <td>9984.T</td>
+                                <td class="score-cell">0.72</td>
+                                <td>175.99%</td>
+                                <td>16.43%</td>
+                                <td>7.60</td>
+                                <td>1.62</td>
+                                <td>0.25</td>
+                                <td class="negative">-9.95%</td>
+                                <td class="negative">-31.89%</td>
+                                <td class="positive">5.76%</td>
+                                <td class="positive">106.78%</td>
+                                <td><a href="https://minkabu.jp/stock/9984" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>12</td>
+                                <td>1928.T</td>
+                                <td class="score-cell">0.71</td>
+                                <td>47.78%</td>
+                                <td>56.73%</td>
+                                <td>11.42</td>
+                                <td>1.18</td>
+                                <td>0.10</td>
+                                <td class="positive">0.50%</td>
+                                <td class="negative">-0.73%</td>
+                                <td class="negative">-0.50%</td>
+                                <td class="positive">10.75%</td>
+                                <td><a href="https://minkabu.jp/stock/1928" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>13</td>
+                                <td>8053.T</td>
+                                <td class="score-cell">0.69</td>
+                                <td>25.04%</td>
+                                <td>32.70%</td>
+                                <td>9.46</td>
+                                <td>1.17</td>
+                                <td>0.14</td>
+                                <td class="positive">0.19%</td>
+                                <td class="positive">3.58%</td>
+                                <td class="positive">21.72%</td>
+                                <td class="positive">33.09%</td>
+                                <td><a href="https://minkabu.jp/stock/8053" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>14</td>
+                                <td>9104.T</td>
+                                <td class="score-cell">0.68</td>
+                                <td>-39.60%</td>
+                                <td>39.88%</td>
+                                <td>5.25</td>
+                                <td>0.58</td>
+                                <td>0.11</td>
+                                <td class="positive">0.09%</td>
+                                <td class="negative">-0.94%</td>
+                                <td class="negative">-5.68%</td>
+                                <td class="negative">-8.86%</td>
+                                <td><a href="https://minkabu.jp/stock/9104" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>15</td>
+                                <td>7267.T</td>
+                                <td class="score-cell">0.67</td>
+                                <td>30.58%</td>
+                                <td>49.04%</td>
+                                <td>10.33</td>
+                                <td>0.51</td>
+                                <td>0.06</td>
+                                <td class="positive">0.19%</td>
+                                <td class="negative">-3.41%</td>
+                                <td class="negative">-3.52%</td>
+                                <td class="positive">13.83%</td>
+                                <td><a href="https://minkabu.jp/stock/7267" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>16</td>
+                                <td>8309.T</td>
+                                <td class="score-cell">0.67</td>
+                                <td>59.32%</td>
+                                <td>30.71%</td>
+                                <td>10.77</td>
+                                <td>0.97</td>
+                                <td>0.09</td>
+                                <td class="positive">1.37%</td>
+                                <td class="positive">7.29%</td>
+                                <td class="positive">8.91%</td>
+                                <td class="positive">22.65%</td>
+                                <td><a href="https://minkabu.jp/stock/8309" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>17</td>
+                                <td>4568.T</td>
+                                <td class="score-cell">0.65</td>
+                                <td>346.49%</td>
+                                <td>80.52%</td>
+                                <td>25.84</td>
+                                <td>4.33</td>
+                                <td>0.17</td>
+                                <td class="positive">3.57%</td>
+                                <td class="negative">-5.55%</td>
+                                <td class="positive">5.57%</td>
+                                <td class="positive">4.36%</td>
+                                <td><a href="https://minkabu.jp/stock/4568" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>18</td>
+                                <td>8411.T</td>
+                                <td class="score-cell">0.65</td>
+                                <td>67.35%</td>
+                                <td>44.68%</td>
+                                <td>13.59</td>
+                                <td>1.24</td>
+                                <td>0.09</td>
+                                <td class="positive">1.90%</td>
+                                <td class="positive">8.07%</td>
+                                <td class="positive">13.36%</td>
+                                <td class="positive">39.88%</td>
+                                <td><a href="https://minkabu.jp/stock/8411" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>19</td>
+                                <td>6920.T</td>
+                                <td class="score-cell">0.64</td>
+                                <td>240.60%</td>
+                                <td>178.25%</td>
+                                <td>28.39</td>
+                                <td>11.63</td>
+                                <td>0.54</td>
+                                <td class="negative">-0.09%</td>
+                                <td class="positive">26.63%</td>
+                                <td class="positive">69.21%</td>
+                                <td class="positive">90.24%</td>
+                                <td><a href="https://minkabu.jp/stock/6920" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                            <tr>
+                                <td>20</td>
+                                <td>1925.T</td>
+                                <td class="score-cell">0.63</td>
+                                <td>49.50%</td>
+                                <td>22.42%</td>
+                                <td>10.85</td>
+                                <td>1.24</td>
+                                <td>0.11</td>
+                                <td class="positive">1.19%</td>
+                                <td class="negative">-0.15%</td>
+                                <td class="positive">2.80%</td>
+                                <td class="positive">11.35%</td>
+                                <td><a href="https://minkabu.jp/stock/1925" target="_blank" class="link-btn">みんかぶ</a></td>
+                            </tr>
+            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </body>
+        </html>
+        
